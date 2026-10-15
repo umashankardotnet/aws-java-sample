@@ -3,10 +3,14 @@ apply plugin: 'application'
 
 mainClassName="com.amazonaws.samples.S3Sample"
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile 'com.amazonaws:aws-java-sdk:1.9.6'
+    implementation platform('software.amazon.awssdk:bom:2.29.0')
+    implementation 'software.amazon.awssdk:s3'
 }
